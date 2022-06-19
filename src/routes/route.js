@@ -22,7 +22,7 @@ router.get("/cowin/getSessionsByDistrict", CowinController.getSessionsByDistrict
 router.get("/getWeather", weatherController.getWeather);
 router.get("/tempOfLondon", weatherController.tempOfLondon);
 router.get("/tempOfCities", weatherController.tempOfCities);
-
+// router.get("/getSortedCities", weatherController.getSortedCities);
 // Memes API
 router.get("/getMemes", memesController.getMemes)
 router.post("/createMemes", memesController.createMemes)

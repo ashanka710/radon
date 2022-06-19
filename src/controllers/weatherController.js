@@ -41,6 +41,9 @@ let tempOfLondon = async function(req, res) {
 }
 
 
+
+
+
 let tempOfCities = async function(req, res) {
     try {
         let cities = ["Bengaluru", "Mumbai", "Delhi", "Kolkata", "Chennai", "London", "Moscow"]
@@ -73,6 +76,37 @@ let tempOfCities = async function(req, res) {
     }
 }
 
+
+
+// let getSortedCities = async function(req, res) {
+//     try {
+//         let cities = ["Bengaluru", "Mumbai", "Delhi", "Kolkata", "Chennai", "London", "Moscow"]
+//         let cityObjArray = []
+//             // better to use for ..of here
+//         for (i = 0; i < cities.length; i++) {
+//             let Obj = {
+//                     city: cities[i]
+//                 } //{city:"bengaluru"}
+//             let resp = await axios.get("http://api.openweathermap.org/data/2.5/weather?q=${cities[i]}&appid=6b02cfd5e241a90f0daf709f7ee5439c")
+//             console.log(resp.data.main.temp)
+//             Obj.temp = resp.data.main.temp //{city:"Bengaluru", temp:301.2}
+//             cityObjArray.push(Obj)
+//         }
+//         let sorted = cityObjArray.sort(function(a, b) {
+//             return a.temp - b.temp
+//         })
+
+//         res.status(200).send({ status: true, data: sorted })
+
+//     } catch (error) {
+//         console.log(error)
+//         res.status(500).send({ status: false, msg: "server error" })
+//     }
+
+// }
+
+
 module.exports.getWeather = getWeather
 module.exports.tempOfLondon = tempOfLondon
 module.exports.tempOfCities = tempOfCities
+    // module.exports.getSortedCities = getSortedCities
